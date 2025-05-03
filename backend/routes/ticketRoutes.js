@@ -1,13 +1,14 @@
 const express = require('express')
 const router = express.Router();
 const admin = require('../config/firebase')
-const {createTicket, getTicketStatus} = require('../controllers/ticketController')
+const {createTicket, getTicketStatus, resolveTicket} = require('../controllers/ticketController')
 const {generateOperatorToken } = require('../services/authService')
 const db = admin.firestore();
 
 router.post('/tickets', createTicket);
 router.post('/tickets/:id', getTicketStatus);
 router.post('/operator-token', generateOperatorToken);
+router.post('/tickets/:id/resolve', resolveTicket);
 
 // To test if the firebase is working man
 router.get('/test-firestore', async (req, res) => {

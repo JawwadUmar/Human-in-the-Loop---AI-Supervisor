@@ -16,6 +16,8 @@
     "firebase": "^11.6.1",
     "firebase-admin": "^13.3.0",
     "livekit-server-sdk": "^2.12.0",
-    "openai": "^4.96.2"
+    "node-fetch": "^2.7.0",
+    "openai": "^4.96.2",
+    "text-encoding": "^0.7.0"
   }
 }
