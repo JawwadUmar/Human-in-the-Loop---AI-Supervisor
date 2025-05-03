@@ -2,6 +2,7 @@
 // const openai = new OpenAI({apiKey:process.env.OPENAI_API_KEY});
 
 const { OpenAI } = require('openai');
+const calculateConfidence = require('../utils/confidenceCalculator');
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -29,7 +30,7 @@ exports.getAIResponse = async(question) =>{
         return{
 
             text: response.choices[0].message.content,
-            confidence: response.choices[0].finish_reason === 'stop' ? 1: 0.5
+            confidence: calculateConfidence(response)
         };
     }
 
