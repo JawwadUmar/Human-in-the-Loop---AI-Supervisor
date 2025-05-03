@@ -1,0 +1,25 @@
+# Environment variables
+.env
+.env.*.local
+
+# Docker
+docker-compose.yml
+docker-compose*.local.yml
+
+# Firebase / GCP service account keys
+serviceAccountKey.json
+serviceAccountKey*.json
+
+# Node.js backend
+backend/node_modules/
+backend/package-lock.json
+backend/.env
+backend/logs/
+backend/serviceAccountKey*.json
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspaces
+*.sublime-project
+
