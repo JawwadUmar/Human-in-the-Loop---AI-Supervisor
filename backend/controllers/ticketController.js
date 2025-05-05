@@ -34,7 +34,7 @@ exports.createTicket = async(req, res) =>{
 
         else{
             //AI couldn't answer it with confidence, create livekit room for human support
-            await livekit.createRoom({name: ticketId});
+            // await livekit.createRoom({name: ticketId});
             await db.collection('tickets').doc(ticketId).update({status: 'needs_human'});
 
             return res.json({ticketId, needsHuman: true});
@@ -75,17 +75,6 @@ exports.resolveTicket = async (req, res) => {
         human_response: response,
         resolved_at: admin.firestore.FieldValue.serverTimestamp()
       });
-  
-      // 2. Send LiveKit message (FINAL WORKING VERSION)
-    //   await livekit.sendData({
-    //     room: String(ticketId),
-    //     data: new TextEncoder().encode(JSON.stringify({
-    //       type: 'admin_response',
-    //       text: response,
-    //       timestamp: Date.now()
-    //     })),
-    //     kind: 1 // RELIABLE as number
-    //   });
 
     await livekit.sendData(
         String(ticketId),

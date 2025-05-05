@@ -17,9 +17,17 @@ backend/.env
 backend/logs/
 backend/serviceAccountKey*.json
 
+# Node.js frontend
+frontend/node_modules/
+frontend/package-lock.json
+frontend/.env
+frontend/logs/
+frontend/serviceAccountKey*.json
+
 # IDEs
 .vscode/
 .idea/
 *.sublime-workspaces
 *.sublime-project
 
+node_modules

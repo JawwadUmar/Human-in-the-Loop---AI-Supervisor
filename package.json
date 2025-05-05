@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@livekit/components-react": "^2.9.3",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "firebase": "^11.6.1",
+    "livekit-client": "^2.11.4",
+    "react-router-dom": "^7.5.3"
+  }
+}
